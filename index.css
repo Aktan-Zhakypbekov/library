@@ -1,0 +1,73 @@
+body {
+  background-color: black;
+  color: silver;
+}
+#mainContainerDiv {
+  background-color: black;
+  height: 960px;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr;
+}
+#navDiv {
+  font-size: 50px;
+  background-color: rgb(17, 9, 3);
+}
+#mainDiv {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  grid-template-rows: 1fr;
+}
+#booksStatsDiv {
+  font-size: 30px;
+  background-color: rgb(8, 13, 17);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.statsDiv {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#booksDiv {
+  background-image: url("https://64.media.tumblr.com/4c64b3f24d8e68c076476f9cd5d34188/647df220e927d7d7-a5/s2048x3072_c0,12444,100000,87467/72f030913e676561aef1688cc62fe4112ebb7247.jpg");
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  opacity: 0.7;
+}
+#deleteLibraryButton {
+  width: 150px;
+  height: 50px;
+  color: silver;
+  background-color: rgb(1, 17, 2);
+  font-size: 18px;
+}
+#deleteLibraryButton:hover {
+  text-shadow: 0 0 1px silver;
+}
+#addBookDiv {
+  background-color: rgb(1, 17, 2);
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#plusSignDiv {
+  font-size: 80px;
+}
+#addBookDiv:hover {
+  transform: scale(1.05);
+  color: white;
+}
+#formPopup {
+  width: 500px;
+  height: 550px;
+  background-color: aqua;
+  position: fixed;
+  left: 650px;
+  top: 300px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>library</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="mainContainerDiv">
+      <div id="navDiv">Dark Academia Library</div>
+      <div id="mainDiv">
+        <div id="booksDiv">
+
+          <div id="addBookDiv"><div id="plusSignDiv">+</div></div>
+          <div id="formPopup">
+            <form action="index.js" class="formContainer">
+              <h1>Add</h1>
+
+              <label for="title"><b>Title</b></label>
+              <input
+                type="text"
+                placeholder="Enter title"
+                name="title"
+                required
+              />
+
+              <label for="author"><b>Author</b></label>
+              <input
+                type="text"
+                placeholder="Enter author"
+                name="author"
+                required
+              />
+
+              <label for="pages"><b>Total pages</b></label>
+              <input
+                type="number"
+                placeholder="Enter pages"
+                name="pages"
+                required
+              />
+
+              <label for="readOrNot"><b>Read or not</b></label>
+              <input type="radio" name="readOrNot" />
+
+              <button type="submit" class="submit">Add</button>
+              <button type="button" class="buttonCancel">Close</button>
+            </form>
+          </div>
+      </div>
+      <div id="booksStatsDiv">
+        <div class="statsDiv" id="totalBooksDiv">
+          <div>Total</div>
+          <div id="totalBooksNumber">0</div>
+        </div>
+        <div class="statsDiv" id="readBooksDiv">
+          <div>Read</div>
+          <div id="readBooksNumber">0</div>
+        </div>
+        <div class="statsDiv" id="notReadBooksDiv">
+          <div>Not read</div>
+          <div id="notReadBooksNumber">0</div>
+        </div>
+        <div class="statsDiv" id="deleteLibraryDiv">
+          <div>
+            <button id="deleteLibraryButton">Delete the library</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
