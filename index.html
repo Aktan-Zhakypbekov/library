@@ -8,67 +8,85 @@
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
+    <div id="addBookDiv"><div id="plusSignDiv">+</div></div>
+    <div id="formPopup">
+      <form action="index.js" id="formContainer">
+        <p>Add a new book</p>
+        <div class="formDiv" id="titleDiv">
+          <div>
+            <label for="title"><b>Title</b></label>
+          </div>
+          <input
+            id="titleInput"
+            type="text"
+            placeholder="Enter title"
+            name="title"
+            required
+          />
+        </div>
+        <div class="formDiv" id="authorDiv">
+          <div>
+            <label for="author"><b>Author</b></label>
+          </div>
+          <input
+            id="authorInput"
+            type="text"
+            placeholder="Enter author"
+            name="author"
+            required
+          />
+        </div>
+        <div class="formDiv" id="pagesDiv">
+          <div>
+            <label for="pages"><b>Total pages</b></label>
+          </div>
+          <input
+            id="pagesInput"
+            type="number"
+            placeholder="Enter pages"
+            name="pages"
+            required
+          />
+        </div>
+        <div id="readOrNotDiv">
+          <div>
+            <label for="readOrNot"><b>Read or not</b></label>
+            <input id="readOrNotInput" type="checkbox" name="readOrNot" />
+          </div>
+        </div>
+        <div id="buttonsDiv">
+          <button id="addBookButton" type="submit" class="submit">Add</button>
+          <button id="closeAddBookButton" type="button" class="buttonCancel">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
     <div id="mainContainerDiv">
       <div id="navDiv">Dark Academia Library</div>
       <div id="mainDiv">
-        <div id="booksDiv">
-
-          <div id="addBookDiv"><div id="plusSignDiv">+</div></div>
-          <div id="formPopup">
-            <form action="index.js" class="formContainer">
-              <h1>Add</h1>
-
-              <label for="title"><b>Title</b></label>
-              <input
-                type="text"
-                placeholder="Enter title"
-                name="title"
-                required
-              />
-
-              <label for="author"><b>Author</b></label>
-              <input
-                type="text"
-                placeholder="Enter author"
-                name="author"
-                required
-              />
-
-              <label for="pages"><b>Total pages</b></label>
-              <input
-                type="number"
-                placeholder="Enter pages"
-                name="pages"
-                required
-              />
-
-              <label for="readOrNot"><b>Read or not</b></label>
-              <input type="radio" name="readOrNot" />
-
-              <button type="submit" class="submit">Add</button>
-              <button type="button" class="buttonCancel">Close</button>
-            </form>
+        <div id="booksDiv"></div>
+        <div id="booksStatsDiv">
+          <div class="statsDiv" id="totalBooksDiv">
+            <div>Total</div>
+            <div id="totalBooksNumber">0</div>
           </div>
-      </div>
-      <div id="booksStatsDiv">
-        <div class="statsDiv" id="totalBooksDiv">
-          <div>Total</div>
-          <div id="totalBooksNumber">0</div>
-        </div>
-        <div class="statsDiv" id="readBooksDiv">
-          <div>Read</div>
-          <div id="readBooksNumber">0</div>
-        </div>
-        <div class="statsDiv" id="notReadBooksDiv">
-          <div>Not read</div>
-          <div id="notReadBooksNumber">0</div>
-        </div>
-        <div class="statsDiv" id="deleteLibraryDiv">
-          <div>
-            <button id="deleteLibraryButton">Delete the library</button>
+          <div class="statsDiv" id="readBooksDiv">
+            <div>Read</div>
+            <div id="readBooksNumber">0</div>
+          </div>
+          <div class="statsDiv" id="notReadBooksDiv">
+            <div>Not read</div>
+            <div id="notReadBooksNumber">0</div>
+          </div>
+          <div class="statsDiv" id="deleteLibraryDiv">
+            <div>
+              <button id="deleteLibraryButton">Delete the library</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>

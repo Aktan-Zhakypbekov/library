@@ -11,7 +11,7 @@ body {
 }
 #navDiv {
   font-size: 50px;
-  background-color: rgb(17, 9, 3);
+  background-color: rgb(31, 17, 6);
 }
 #mainDiv {
   display: grid;
@@ -20,7 +20,7 @@ body {
 }
 #booksStatsDiv {
   font-size: 30px;
-  background-color: rgb(8, 13, 17);
+  background-color: rgb(9, 14, 19);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -37,12 +37,12 @@ body {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  opacity: 0.7;
+  grid-gap: 6px;
 }
 #deleteLibraryButton {
   width: 150px;
   height: 50px;
-  color: silver;
+  color: grey;
   background-color: rgb(1, 17, 2);
   font-size: 18px;
 }
@@ -50,24 +50,86 @@ body {
   text-shadow: 0 0 1px silver;
 }
 #addBookDiv {
+  width: 150px;
+  height: 150px;
   background-color: rgb(1, 17, 2);
-  opacity: 0.9;
+  opacity: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  left: 25px;
+  top: 805px;
+  opacity: 0.9;
+  color: grey;
 }
 #plusSignDiv {
   font-size: 80px;
 }
 #addBookDiv:hover {
   transform: scale(1.05);
-  color: white;
+  color: silver;
 }
 #formPopup {
-  width: 500px;
-  height: 550px;
-  background-color: aqua;
+  display: none;
   position: fixed;
-  left: 650px;
-  top: 300px;
+  width: 600px;
+  height: 600px;
+  background-color: rgb(3, 22, 22);
+  position: fixed;
+  left: 640px;
+  top: 250px;
+}
+#formPopup form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+#formPopup form p {
+  font-size: 30px;
+}
+.formDiv {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.formDiv input {
+  width: 400px;
+  height: 50px;
+  background-color: silver;
+  font-size: 18px;
+}
+#readOrNotDiv {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+#readOrNotDiv input {
+  width: 20px;
+  height: 20px;
+  background-color: silver;
+}
+#buttonsDiv {
+  margin-bottom: 15px;
+  width: 400px;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#buttonsDiv button {
+  width: 180px;
+  height: 80px;
+  font-size: 20px;
+  color: silver;
+}
+#addBookButton {
+  background-color: rgb(75, 93, 97);
+}
+#closeAddBookButton {
+  background-color: rgb(75, 93, 97);
 }
