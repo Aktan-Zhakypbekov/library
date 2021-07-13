@@ -44,6 +44,9 @@ deleteLibraryButton.addEventListener("mouseup", () => {
 //Also create an object to hold stats
 let library = [];
 let stats = {};
+stats.totalBooks = 0;
+stats.readBooks = 0;
+stats.notReadBooks = 0;
 class Book {
   constructor(title, author, pages, readOrNot) {
     this.title = title;
@@ -64,7 +67,7 @@ function addBookFunction() {
   //once the input values are received, create the book card to display in our library shelves
   let bookCard = document.createElement("div");
   bookCard.className = "bookCard";
-  bookCard.style.cssText = `border: 1px solid grey; background-color: black; display: grid; grid-template-rows: 1fr 1fr 1fr 1fr; grid-template-columns: 1fr`;
+  bookCard.style.cssText = `border: 1px solid grey; background-color: black; display: grid; grid-template-rows: 1fr 1fr 1fr 1fr 1fr; grid-template-columns: 1fr`;
   let bookCardTitle = document.createElement("div");
   bookCardTitle.textContent = title;
   bookCardTitle.style.cssText =
@@ -77,20 +80,56 @@ function addBookFunction() {
   bookCardPages.textContent = pages;
   bookCardPages.style.cssText =
     "display: flex; justify-content: center; align-items: center";
+  let readStatus = document.createElement("div");
+  readStatus.style.cssText =
+    "display: flex; justify-content: center; align-items: center";
+  let labelStatus = document.createElement("label");
+  labelStatus.textContent = "Read or not";
+  let inputStatus = document.createElement("input");
+  inputStatus.type = "checkbox";
+  inputStatus.checked = book.readOrNot;
+  readStatus.appendChild(labelStatus);
+  readStatus.appendChild(inputStatus);
+  inputStatus.addEventListener("change", () => {
+    if (inputStatus.checked === true) {
+      book.readOrNot = true;
+      stats.notReadBooks -= 1;
+      stats.readBooks += 1;
+    } else {
+      book.readOrNot = false;
+      stats.notReadBooks += 1;
+      stats.readBooks -= 1;
+    }
+    document.querySelector("#readBooksNumber").textContent = stats.readBooks;
+    document.querySelector("#notReadBooksNumber").textContent =
+      stats.notReadBooks;
+  });
+
   let deleteButtonMini = document.createElement("button");
   deleteButtonMini.textContent = "Delete";
   deleteButtonMini.style.cssText = "background-color: rgb(20, 40, 80)";
   deleteButtonMini.addEventListener("click", (e) => {
     bookCard.remove();
+    stats.totalBooks -= 1;
+    if (book.readOrNot === true) {
+      stats.readBooks -= 1;
+    } else {
+      stats.notReadBooks -= 1;
+    }
+    document.querySelector("#totalBooksNumber").textContent = stats.totalBooks;
+    document.querySelector("#readBooksNumber").textContent = stats.readBooks;
+    document.querySelector("#notReadBooksNumber").textContent =
+      stats.notReadBooks;
     library.forEach((e) => {
       if (e.title == book.title && e.author == book.author) {
-        library.splice(indexOf(book), 1);
+        library.splice(indexOf(e), 1);
       }
     });
   });
   bookCard.appendChild(bookCardTitle);
   bookCard.appendChild(bookCardAuthor);
   bookCard.appendChild(bookCardPages);
+  bookCard.appendChild(readStatus);
   bookCard.appendChild(deleteButtonMini);
   document.querySelector("#booksDiv").appendChild(bookCard);
 
@@ -102,9 +141,12 @@ function addBookFunction() {
   formPopup.style.cssText = "display: none";
 
   //get data for stats and display them
-  stats.totalBooks = library.length;
-  stats.readBooks = library.filter((e) => e.readOrNot == true).length;
-  stats.notReadBooks = library.filter((e) => e.readOrNot == false).length;
+  stats.totalBooks += 1;
+  if (book.readOrNot === true) {
+    stats.readBooks += 1;
+  } else {
+    stats.notReadBooks += 1;
+  }
 
   document.querySelector("#totalBooksNumber").textContent = stats.totalBooks;
   document.querySelector("#readBooksNumber").textContent = stats.readBooks;

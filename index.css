@@ -35,8 +35,8 @@ body {
 #booksDiv {
   background-image: url("https://64.media.tumblr.com/4c64b3f24d8e68c076476f9cd5d34188/647df220e927d7d7-a5/s2048x3072_c0,12444,100000,87467/72f030913e676561aef1688cc62fe4112ebb7247.jpg");
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 6px;
 }
 #deleteLibraryButton {
